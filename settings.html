@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misskey Quick Share - 設定</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="settings-container">
+    <h1>🚀 Misskey Quick Share - 設定</h1>
+
+    <div class="status" id="status">
+      <p>設定を読み込んでいます...</p>
+    </div>
+
+    <div class="settings-section">
+      <h2>認証設定</h2>
+      
+      <div class="form-group">
+        <label for="instanceUrl">MisskeyインスタンスURL</label>
+        <input type="url" id="instanceUrl" placeholder="https://misskey.io" />
+        <small>例: https://misskey.io (末尾の / は不要)</small>
+      </div>
+
+      <div class="auth-status" id="authStatus">
+        <p>未認証</p>
+      </div>
+
+      <div class="form-actions">
+        <button id="authenticateButton" class="btn btn-primary">MIAuthで認証</button>
+        <button id="revokeButton" class="btn btn-danger" style="display: none;">認証を解除</button>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>投稿設定</h2>
+
+      <div class="form-group">
+        <label for="visibility">デフォルトの可視性</label>
+        <select id="visibility">
+          <option value="public">公開</option>
+          <option value="home">ホーム</option>
+          <option value="followers">フォロワー限定</option>
+          <option value="specified">ダイレクト</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="defaultTags">デフォルトタグ（任意）</label>
+        <textarea id="defaultTags" placeholder="#タグ1 #タグ2" rows="2"></textarea>
+        <small>投稿に自動的に追加されるタグやテキスト</small>
+      </div>
+
+      <div class="form-actions">
+        <button id="saveButton" class="btn btn-primary">設定を保存</button>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>使い方</h2>
+      <ol>
+        <li>MisskeyインスタンスURLを入力</li>
+        <li>「MIAuthで認証」ボタンをクリック</li>
+        <li>Misskeyの認証ページで許可</li>
+        <li>ウェブページでテキストや画像を選択</li>
+        <li>右クリック → 「Misskeyに投稿」</li>
+      </ol>
+    </div>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>
